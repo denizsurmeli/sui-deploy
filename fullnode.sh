@@ -1,3 +1,4 @@
+cd ~
 apt-get update \
     && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends \
     tzdata \
@@ -11,6 +12,9 @@ apt-get update \
     cmake
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+expect ">"
+send -- "1"
+source "$HOME/.cargo/env"
 git clone https://github.com/$1/sui.git
 cd sui
 git remote add upstream https://github.com/MystenLabs/sui
