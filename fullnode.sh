@@ -13,9 +13,7 @@ apt-get update \
     libclang-dev \
     cmake
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-expect ">"
-send -- "1"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y
 source "$HOME/.cargo/env"
 git clone https://github.com/$1/sui.git
 cd sui
