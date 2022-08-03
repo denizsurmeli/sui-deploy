@@ -22,6 +22,9 @@ curl -fLJO https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blo
 rm fullnode.yaml
 mv ../sui-deploy/fullnode.yaml .
 mv ../sui-deploy/node.service /etc/systemd/system
+sudo ufw allow 9000
+sudo ufw allow 8080
+sudo ufw allow 9184
 sudo systemctl daemon-reload
 sudo systemctl start node.service
 sudo systemctl status node.service
