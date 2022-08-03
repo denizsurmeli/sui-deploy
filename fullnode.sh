@@ -13,8 +13,7 @@ apt-get update \
     libclang-dev \
     cmake
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y
-source "$HOME/.cargo/env"
+snap install rustup
 git clone https://github.com/$1/sui.git
 cd sui
 git remote add upstream https://github.com/MystenLabs/sui
