@@ -24,4 +24,4 @@ mv ../sui-deploy/fullnode.yaml .
 mv ../sui-deploy/node.service /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl start node.service
-
+sudo systemctl status node.service
