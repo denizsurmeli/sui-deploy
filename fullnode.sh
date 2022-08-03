@@ -11,7 +11,7 @@ apt-get update \
     libclang-dev \
     cmake \
 
-snap install rustup
+snap install rustup --classic
 git clone https://github.com/$1/sui.git
 cd sui
 git remote add upstream https://github.com/MystenLabs/sui
