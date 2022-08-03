@@ -1,5 +1,3 @@
-#!/usr/bin/expect -f
-
 cd ~
 apt-get update \
     && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends \
@@ -11,7 +9,7 @@ apt-get update \
     libssl-dev \
     pkg-config \
     libclang-dev \
-    cmake
+    cmake \
 
 snap install rustup
 git clone https://github.com/$1/sui.git
@@ -21,4 +19,9 @@ git fetch upstream
 git checkout --track upstream/devnet
 cp crates/sui-config/data/fullnode-template.yaml fullnode.yaml
 curl -fLJO https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
-cargo run --release --bin sui-node -- --config-path fullnode.yaml
+rm fullnode.yaml
+mv ../sui-deploy/fullnode.yaml .
+mv ../sui-deploy/node.service /etc/systemd/system
+sudo systemctl daemon-reload
+sudo systemctl start node.service
+
