@@ -1,3 +1,5 @@
+db_path: "suidb"
+
 network-address: "/dns/localhost/tcp/8080/http"
 metrics-address: "0.0.0.0:9184"
 json-rpc-address: "0.0.0.0:9000"
