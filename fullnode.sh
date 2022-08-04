@@ -25,6 +25,8 @@ mv ../sui-deploy/node.service /etc/systemd/system
 sudo ufw allow 9000
 sudo ufw allow 8080
 sudo ufw allow 9184
+
 sudo systemctl daemon-reload
+sudo systemctl enable node.service
 sudo systemctl start node.service
 sudo systemctl status node.service
